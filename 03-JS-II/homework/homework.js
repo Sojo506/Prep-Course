@@ -157,15 +157,19 @@ function esPrimo(numero) {
   // Pista 2: Puedes resolverlo usando un bucle `for`
   // Nota: Los números 0 y 1 NO son considerados números primos
   let cont = 0;
-  for (let i = 1; i <= numero; i++) {
-    if (numero % i == 0) {
-      cont++;
-    }
-  }
-  if (cont == 2) {
-    return true;
-  }else {
+  if(numero === 0 || numero === 1) {
     return false;
+  } else {
+    for (let i = 1; i <= numero; i++) {
+      if (numero % i == 0) {
+        cont++;
+      }
+    }
+    if (cont == 2) {
+      return true;
+    }else {
+      return false;
+    }
   }
 }
 
