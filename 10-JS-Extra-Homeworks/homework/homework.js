@@ -76,17 +76,13 @@ function capicua(numero) {
   //La misma debe retornar: "Es capicua" si el número que se lee igual de 
   //izquierda a derecha que de derecha a izquierda. Caso contrario retorna "No es capicua"
   //Escribe tu código aquí
-  let auxStr = numero.toString();
-  let auxStr2 = numero.toString();
-  auxStr = auxStr.split("");
-  auxStr2 = auxStr2.split("");
-  auxStr2 = auxStr2.reverse();
-  for (let i = 0; i < auxStr.length; i++) {
-    if (auxStr[i] !== auxStr2[i]) {
-      return "No es capicua";
-    }
+  let array = numero.toString().split("").reverse().join("");
+  numero = numero.toString();
+  if (numero === array) {
+    return "Es capicua";
   }
-  return "Es capicua";
+  return "No es capicua";
+
 }
 
 
@@ -95,8 +91,8 @@ function deleteAbc(cadena) {
   //y devuelva la versión modificada o la misma cadena, en caso de contener dichas letras.
   //Escribe tu código aquí
   let aux = "";
-  for(let i=0; i<cadena.length; i++) {
-    if(cadena[i] !== "a" && cadena[i] !== "b" && cadena[i] !== "c") {
+  for (let i = 0; i < cadena.length; i++) {
+    if (cadena[i] !== "a" && cadena[i] !== "b" && cadena[i] !== "c") {
       aux += cadena[i];
     }
   }
@@ -108,10 +104,10 @@ function sortArray(arr) {
   //La función recibe una matriz de strings. Ordena la matriz en orden creciente de longitudes de cadena
   //Ej: Recibe ---> ["You", "are", "beautiful", "looking"] || Devuelve ---> [“You", "are", "looking", "beautiful"]
   //Escribe tu código aquí
-  arr.sort((a,b) => {
-    if(a.length < b.length) {
+  arr.sort((a, b) => {
+    if (a.length < b.length) {
       return -1;
-    }else {
+    } else {
       return 1;
     }
   })
@@ -126,9 +122,9 @@ function buscoInterseccion(arreglo1, arreglo2) {
   //Aclaración: los arreglos no necesariamente tienen la misma longitud
   //Escribe tu código aquí  
   let nuevoArray = [];
-  for(let i=0; i<arreglo1.length; i++) {
-    for(let x=0; x<arreglo2.length; x++) {
-      if(arreglo1[i] === arreglo2[x] && !nuevoArray.includes(arreglo1[i])) {
+  for (let i = 0; i < arreglo1.length; i++) {
+    for (let x = 0; x < arreglo2.length; x++) {
+      if (arreglo1[i] === arreglo2[x] && !nuevoArray.includes(arreglo1[i])) {
         nuevoArray.push(arreglo1[i]);
       }
     }
